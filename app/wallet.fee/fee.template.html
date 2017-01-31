@@ -1,0 +1,16 @@
+<div class="fee" ng-class="{ editing: $ctrl.is_editing }">
+    <div class="fee__head">
+        <div class="time">{{ $ctrl.fee.time | date:'dd/mm/yyyy hh:mm a' }}</div>        
+    </div>
+    <div class="fee__content">
+        <textarea rows="1" class="note"              
+            ng-model="$ctrl.fee.note"
+            ng-show="$ctrl.is_editing" 
+            ng-blur="$ctrl.onBlur($ctrl.fee)"></textarea>
+        <div contenteditable="true" class="preview"
+            ng-show="!$ctrl.is_editing"
+            ng-click="$ctrl.onClick($event)" 
+            ng-bind-html="$ctrl.fee.note_parsed"></div>
+        <div class="money">{{$ctrl.fee.money | currency}}</div>
+    </div>
+</div>

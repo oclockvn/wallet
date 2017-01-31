@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>Qallet</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <q-head></q-head>
+
+        <div class="wallet">
+            <q-summary></q-summary>
+            <!-- /summary -->
+
+            <q-fees></q-fees>
+            <!-- /fees -->
+        </div>
+
+        <q-backdrop></q-backdrop>
+        
+        <script src="venders/angular.js"></script>
+        <script src="venders/angular-sanitize.js"></script>
+        <script src="venders/autosize.js"></script>
+        <script src="venders/marked.min.js"></script>
+        <script src="app/app.common.js"></script>
+
+        <script src="app/app.modules.js"></script>
+        <script src="app/wallet.head/head.component.js"></script>
+        <script src="app/wallet.summary/sum.component.js"></script>
+        <script src="app/wallet.fees/fees.component.js"></script>
+        <script src="app/wallet.fee/fee.component.js"></script>
+        <script src="app/wallet.backdrop/backdrop.component.js"></script>
+    </body>
+</html>

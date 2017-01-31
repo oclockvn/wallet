@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Segoe UI';
+  background-color: #eee;
+  font-size: 14px;
+}
+
+.header {
+  position: fixed;
+  background-color: #2196f3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 200;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+}
+
+.wallet {
+  margin-top: 60px;
+  padding: 8px;
+}
+
+.head__search {
+  padding: 8px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.search {
+  padding: 8px;
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: 2px;
+  color: #fff;
+}
+
+.search:focus,
+.search:active,
+.search:hover {
+  outline: none;
+}
+
+.head__account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.head__account a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 8px;
+  color: #fff;
+  font-size: .9rem;
+  /*text-transform: uppercase;*/
+}
+
+.head__account span {
+  color: #fff;
+  position: relative;
+  top: -1px;
+}
+
+.wallet {
+  max-width: 960px;  
+  margin: 60px auto;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+  box-shadow: none;
+}
+
+.wallet__sum {
+  background-color: #4caf50;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px;
+  font-weight: 600;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+}
+
+.fee {
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+  margin-top: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.fee.editing {
+  z-index: 202;
+}
+
+.fee__head {  
+  padding: 2px 8px;
+  font-size: .8rem;
+  font-weight: 400;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.fee__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-left: 6px solid #f44336;
+  border: none;
+}
+
+.fee__content .note {
+  width: 100%;
+  font-family: 'Segoe UI';
+  resize: none;
+  padding: 2px 8px 8px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-size: 1rem;
+  /*white-space: nowrap;*/
+  /*overflow: hidden;*/
+  cursor: pointer;
+}
+
+.fee__content .money {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f44336;
+  color: #fff;
+  font-weight: 900;
+  font-size: .9rem;
+  border: none;
+  padding: 4px 8px;
+}
+
+.note:hover,
+.note:focus {
+  /*background-color: rgba(0,0,0,.1);*/
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 201;
+  display: none;
+}
+
+.backdrop.in {
+  display: block;
+}
+
+.preview  {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.preview:focus {
+    outline: none;
+}
+
+.preview ol,
+.preview ul {
+    margin: 0;
+    padding: 0;
+    margin-left: 16px;
+    margin-bottom: 8px;
+}
+
+.preview p {
+    margin-bottom: 8px;
+}
+
+.preview blockquote {
+    border-left: 4px solid #ddd;
+    padding: 4px;
+    padding-left: 8px;
+    margin: 8px 0 8px 8px;
+}
+
+.preview hr {
+    margin: 8px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.preview h1,
+.preview h2,
+.preview h3,
+.preview h4,
+.preview h5,
+.preview h6 {
+    margin: 4px 0 8px;
+}
+
+.preview {
+    padding: 8px;
+}
+
+.preview code {
+    color: #c7254e;
+    background-color: #f9f2f4;
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.preview:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
