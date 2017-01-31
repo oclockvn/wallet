@@ -3,14 +3,15 @@
         <div class="time">{{ $ctrl.fee.time | date:'dd/mm/yyyy hh:mm a' }}</div>        
     </div>
     <div class="fee__content">
-        <textarea rows="1" class="note"              
+        <textarea rows="1" class="note"
+            ng-click="$ctrl.onClick($event)"              
             ng-model="$ctrl.fee.note"
-            ng-show="$ctrl.is_editing" 
+            mmng-show="$ctrl.is_editing" 
             ng-blur="$ctrl.onBlur($ctrl.fee)"></textarea>
-        <div contenteditable="true" class="preview"
-            ng-show="!$ctrl.is_editing"
+        <!--<div mcontenteditable="true" class="preview"
+            ng-hide="$ctrl.is_editing"
             ng-click="$ctrl.onClick($event)" 
-            ng-bind-html="$ctrl.fee.note_parsed"></div>
+            ng-bind-html="$ctrl.fee.note_parsed"></div>-->
         <div class="money">{{$ctrl.fee.money | currency}}</div>
     </div>
 </div>

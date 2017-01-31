@@ -1,3 +1,3 @@
 <div class="wallet__fees">
-    <q-fee ng-repeat="fee in $ctrl.fees" fee="fee"></q-fee>
+    <q-fee ng-repeat="fee in $ctrl.fees" fee="fee" class="fee-animate" ng-class="{ first: $first === true }"></q-fee>
 </div>

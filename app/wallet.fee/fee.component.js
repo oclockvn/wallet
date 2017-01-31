@@ -23,15 +23,12 @@
 
         self.onClick = function($event) {
             self.is_editing = true;
-            // console.log('onClick', $event);
-            // console.log($event.target, $event.target.parentElement, $event.target.parentElement.querySelector('textarea'));
+
             var fee_element = $event.target.closest('.fee');
             var ta = fee_element.querySelector('textarea');
-            console.log('ta', ta);
+
             if (ta) {
-                console.log('found textarea');
                 setTimeout(function() {
-                    console.log('focus textarea');
                     ta.focus();
                     autosize.update(ta);
                 }, 100);
@@ -41,8 +38,8 @@
         };
 
         self.onBlur = function(fee) {
-            fee.note_parsed = marked(fee.note);
-            console.log('note', fee.note_parsed);
+            // fee.note_parsed = marked(fee.note);
+            // console.log('note', fee.note_parsed);
         };
     }
 
