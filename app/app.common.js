@@ -3,7 +3,12 @@
         events: {
             edit_fee: 'edit_fee',
             quit_edit: 'quit_edit',
-        }
+        },
+        isNumber: function (numb) {
+            var num = Number(numb);
+            return num !== null && angular.isNumber(num) && isFinite(num);
+        },
+        pattern: /^(.{1,1000})([+-]\d{1,12})$/g,
     };
 
     if (window.Element && !Element.prototype.closest) {

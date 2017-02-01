@@ -1,37 +1,28 @@
 <!doctype html>
 <html ng-app="app">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-        <title>Qallet</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <q-head></q-head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>Qallet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--<wallet-header></wallet-header>-->
 
-        <div class="wallet">
-            <q-summary></q-summary>
-            <!-- /summary -->
+    <div class="container wallet-container">
+        <wallet></wallet>
+    </div>
 
-            <q-fees></q-fees>
-            <!-- /fees -->
-        </div>
+    <script src="venders/angular.js"></script>
+    <!--<script src="venders/angular-animate.min.js"></script>
+    <script src="venders/angular-sanitize.js"></script>-->
 
-        <q-backdrop></q-backdrop>
-        
-        <script src="venders/angular.js"></script>
-        <script src="venders/angular-animate.min.js"></script>
-        <script src="venders/angular-sanitize.js"></script>
-        <script src="venders/autosize.js"></script>
-        <!--<script src="venders/marked.min.js"></script>-->
-        <script src="app/app.common.js"></script>
-
-        <script src="app/app.modules.js"></script>
-        <script src="app/wallet.head/head.component.js"></script>
-        <script src="app/wallet.summary/sum.component.js"></script>
-        <script src="app/wallet.fees/fees.component.js"></script>
-        <script src="app/wallet.fee/fee.component.js"></script>
-        <script src="app/wallet.backdrop/backdrop.component.js"></script>
-    </body>
+    <script src="app/app.modules.js"></script>
+    <script src="app/app.filters.js"></script>
+    <!--<script src="app/wallet-header.component.js"></script>-->
+    <script src="app/wallet-fee.component.js"></script>
+    <script src="app/wallet.component.js"></script>
+    <script src="app/app.common.js"></script>
+</body>
 </html>

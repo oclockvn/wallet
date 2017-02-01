@@ -6,243 +6,291 @@
 
 html, body {
   font-family: 'Segoe UI';
-  background-color: #eee;
   font-size: 14px;
 }
 
+body {
+  padding: 65px 10px;
+  background-color: #eee;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
 .header {
-  position: fixed;
   background-color: #2196f3;
+  overflow: hidden;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  z-index: 200;
+  right: 0;
+  z-index: 10;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
 }
 
-.head__search {
+
+.header .container {
+  display: flex;
   padding: 8px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
-.search {
+.header__search {
+  flex: 1;
+}
+
+.search-container {
+  
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .3);
+  max-width: 600px;
   padding: 8px;
-  display: block;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  border: none;
-  box-shadow: none;
-  outline: none;
-  background-color: rgba(0, 0, 0, .2);
   border-radius: 2px;
-  color: #fff;
 }
 
-.search:focus,
-.search:active,
-.search:hover {
-  outline: none;
-}
-
-.head__account {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.head__account a {
-  text-decoration: none;
+.search-container span {
+  
   display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+
+.search-container .search-input {
+  display: block;
+  max-width: 600px;
+  width: 100%;
   padding: 0 8px;
-  color: #fff;
-  font-size: .9rem;
-  /*text-transform: uppercase;*/
+  font-size: 1rem;
+  
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;  
 }
 
-.head__account span {
-  color: #fff;
-  position: relative;
-  top: -1px;
+.search-container .search-clear {
+  cursor: pointer;
+  display: inline-block;
 }
 
-.wallet {
-  max-width: 960px;  
-  margin: 50px auto;
-  padding: 8px;
+.header__account {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.header__account a {
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  max-width: 80%;
+  margin: auto;
+}
+
+.wallet-container {
+  background-color: #fff;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
-  box-shadow: none;
 }
 
-.wallet__sum {
+.summary {  
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
   background-color: #4caf50;
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 8px;
+  font-size: 1rem;
   font-weight: 600;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+}
+
+.summary.negative {
+    background-color: #f44336;
+}
+
+.summary__report {
+  flex: 1;
+  text-align: right;
+}
+
+.summary__report span {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.summary span:last-child {
+  font-weight: 900;
 }
 
 .fee {
-  /*border-top: 1px solid #ddd;*/
-  background-color: #fff;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
-  margin-top: 8px;
-  position: relative;
-  cursor: pointer;  
-}
-
-.fee.editing {
-  z-index: 202;
-}
-
-.fee-animate.ng-animate {
-  display: block;
-  -webkit-transition: all .6s ease-in-out;
-  -moz-transition: all .6s ease-in-out;
-  transition: all .6s ease-in-out;
-}
-
-.fee-animate.ng-enter {
-  opacity: 0;
-  transform: translateY(16px);
-}
-
-.fee-animate.ng-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fee__head {  
-  padding: 6px 8px;
-  font-size: .8rem;
-  font-weight: 400;
-  top: 0;
-  left: 0;
-  border-bottom: 1px solid #eee;
-}
-
-.fee__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  border-left: 6px solid #f44336;
+  padding: 10px 10px;
+  padding: 0 10px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  position: relative;
+  /*-webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;*/
+}
+
+.fee:before {
+  content: '';
+  display: block;
+  right: 100%;
+  top: 0%;
+  bottom: 0%;
+  width: 5px;
+  background-color: #4caf50;
+  position: absolute;
+}
+
+.fee.out:before {
+    background-color: #f44336;
+}
+
+.last-fee .fee {
   border: none;
 }
 
-.fee__content .note {
+.fee:hover {
+  background-color: #eee;
+}
+
+/*
+.wallet-fee.ng-animate {
+    display: block;
+    -webkit-transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
+}
+
+.wallet-fee.ng-enter.ng-animate,
+.wallet-fee.ng-move.ng-animate,
+.wallet-fee.ng-leave.ng-animate {
+    display: block;
+    -webkit-transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
+}
+
+.wallet-fee.ng-enter-active,
+.wallet-fee.ng-move-active,
+.wallet-fee.ng-leave.ng-animate {
+    opacity: 1;
+    max-height: 40px;
+    overflow: hidden;
+}
+
+.wallet-fee.ng-leave-active.ng-animate {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+*/
+
+.fee__check label {
+    cursor: pointer;
+    display: block;
+    padding: 10px 0;
+}
+
+.fee__note {
+  flex: 1;
+}
+
+.fee__note input {
   width: 100%;
-  font-family: 'Segoe UI';
-  resize: none;
-  padding: 8px;
+  display: block;
+  height: auto;
+  line-height: initial;
+  padding: 10px;
   border: none;
   outline: none;
-  box-shadow: none;
   font-size: 1rem;
-  /*white-space: nowrap;*/
-  /*overflow: hidden;*/
-  /*cursor: pointer;*/
+  font-family: inherit;
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: transparent;
 }
 
-.fee__content .money {
-  margin: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #f44336;
-  color: #fff;
+.fee__note input:focus {
+    color: #2196f3;
+}
+
+.fee__time {
+  font-size: 1rem;
+  padding: 0 8px;
+}
+
+.fee__money {
   font-weight: 900;
-  font-size: .9rem;
-  border: none;
-  padding: 4px 8px;
+  color: #4caf50;
 }
 
-.note:hover,
-.note:focus {
-  background-color: rgba(0,0,0,.1);
+.fee.out .fee__money {
+    color: #f44336;
 }
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .8);
-  z-index: 201;
-  display: none;
+.fee:hover input {  
+  color: #2196f3;
 }
 
-.backdrop.in {
-  display: block;
-}
+@media screen and (max-width: 768px) {
 
-.preview  {
-    border: none;
-    outline: none;
-    font-size: 1rem;
+  .container {
+    max-width: 100%;
+  }
+
+  .fee {
+    flex-direction: column;
+  }
+  
+  .fee > div {
     width: 100%;
-    padding: 8px;
-}
+  }
+  
+  .fee__note {
+    border: 1px solid #ddd;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
-.preview:focus {
-    outline: none;
-}
+  .fee .fee__money {
+    width: auto;
+  }
+  
+  .fee__money {
+    text-align: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .fee__check label {
+    text-align: left;
+  }
 
-.preview ol,
-.preview ul {
-    margin: 0;
-    padding: 0;
-    margin-left: 16px;
-    margin-bottom: 8px;
+/*  .wallet-fee.ng-enter-active,
+.wallet-fee.ng-move-active,
+.wallet-fee.ng-leave.ng-animate {
+    opacity: 1;
+    overflow: hidden;
+    max-height: 100px;
 }
-
-.preview > p {
-    margin-bottom: 8px;
-}
-
-.preview blockquote {
-    border-left: 4px solid #ddd;
-    padding: 4px;
-    padding-left: 8px;
-    margin: 8px 0 8px 8px;
-}
-
-.preview hr {
-    margin: 8px 0;
-    border: none;
-    border-bottom: 1px solid #ddd;
-}
-
-.preview h1,
-.preview h2,
-.preview h3,
-.preview h4,
-.preview h5,
-.preview h6 {
-    margin: 4px 0 8px;
-}
-
-.preview code {
-    color: #c7254e;
-    background-color: #f9f2f4;
-    padding: 4px;
-    border-radius: 2px;
-}
-
-.preview:hover {
-    background-color: rgba(0, 0, 0, .1);
+*/
 }
