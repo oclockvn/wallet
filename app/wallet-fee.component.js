@@ -9,11 +9,12 @@
             templateUrl: 'app/wallet-fee.template.html',
             controller: ['$scope', '$rootScope', feeController],
             bindings: {
-                fee: '<'
+                fee: '<',
+                checkChange: '&',
             },
             transclude: true,
-            // require: {
-            //     parent: '^feesController'
-            // }
+            require: {
+                parent: '^wallet'
+            }
         });
 })(window);

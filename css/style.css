@@ -25,6 +25,7 @@ body {
 
 .header {
   background-color: #2196f3;
+  background-color: #3367d6;
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -162,12 +163,16 @@ body {
     background-color: #f44336;
 }
 
-.last-fee .fee {
-  border: none;
-}
-
 .fee:hover {
   background-color: #eee;
+}
+
+.fee.fee--checked {
+  background-color: #ddd !important;
+}
+
+.last-fee .fee {
+  border: none;
 }
 
 /*
@@ -250,6 +255,65 @@ body {
   color: #2196f3;
 }
 
+.action {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background-color: #4488ff;
+}
+
+.action {
+  
+}
+
+.action .container {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  
+  height: 56px;
+}
+
+.action .action__fn {
+  flex: 1;
+  text-align: right;
+}
+
+.md-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 4px 16px;
+  color: #fff;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1rem;
+  transition: .3s ease-in-out;
+}
+
+.md-button.close-checked {
+  margin-top: 4px;
+}
+
+.md-button.delete-button {
+  background-color: rgba(0,0,0,.1);
+  border-radius: 2px;
+  border: none;
+  padding: 8px 16px;
+}
+
+.action .total-checked {
+  margin-left: 10px;
+  color: #fff;
+}
+
 @media screen and (max-width: 768px) {
 
   .container {
@@ -284,13 +348,4 @@ body {
   .fee__check label {
     text-align: left;
   }
-
-/*  .wallet-fee.ng-enter-active,
-.wallet-fee.ng-move-active,
-.wallet-fee.ng-leave.ng-animate {
-    opacity: 1;
-    overflow: hidden;
-    max-height: 100px;
-}
-*/
 }

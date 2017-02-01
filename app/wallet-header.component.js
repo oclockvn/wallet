@@ -33,6 +33,8 @@
                 data: '<',
                 // onKeyup: '&',
                 onClearSearch: '&',
+                uncheckAll: '&',
+                deleteSelected: '&',
             }
         });
 })();

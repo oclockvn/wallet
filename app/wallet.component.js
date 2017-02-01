@@ -6,6 +6,7 @@
         self.$onInit = function () {
 
             self.fees = [];
+            self.checked_fees = [];
             self.total_fee = 0;
             self.data = {
                 keyword: ''
@@ -64,9 +65,20 @@
             self.data.keyword = '';
         }
 
+        self.checkChange = function(fee) {
+            var idx = self.checked_fees.indexOf(fee);
+            if (idx >= 0) {
+                self.checked = false;
+                self.checked_fees.splice(idx, 1);
+            } else {
+                fee.checked = true;
+                self.checked_fees.push(fee);
+            }
+        };
+
         self.$postLink = function () {
             // console.log('$postLink');
-        }
+        };
 
         self.$onChanges = function(changedObject) {
             // console.log('wallet.$onChanges',changedObject);
@@ -74,6 +86,31 @@
 
         self.$doCheck = function() {
             // console.log('checking');
+        };
+
+        self.uncheckAll = function() {
+            self.checked_fees = [];
+            self.fees.forEach(function(fee, i){
+                console.log('fee', fee);
+                fee.checked = false;
+            });
+        };
+
+        self.deleteSelected = function() {
+            if (self.checked_fees.length === 0) {
+                return;
+            }
+
+            self.checked_fees.forEach(function(fee) {
+                var idx = self.fees.indexOf(fee);
+                if (idx > -1) {
+                    // fee.checked = false;
+                    self.fees.splice(idx, 1);
+                }
+            });
+
+            self.checked_fees = [];
+            calcTotalFee();
         };
 
         function calcTotalFee() {
