@@ -11,6 +11,7 @@
             bindings: {
                 fee: '<'
             },
+            transclude: true,
             // require: {
             //     parent: '^feesController'
             // }

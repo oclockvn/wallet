@@ -1,4 +1,4 @@
-<header class="header">
+<!--<header class="header">
     <div class="container">
         <div class="header__search">
             <div class="search-container">
@@ -23,7 +23,9 @@
             <a href="#">oclockvn</a>
         </div>
     </div>
-</header>
+</header>-->
+
+<wallet-header data="$ctrl.data" on-clear-search="$ctrl.onClearSearch()"></wallet-header>
 
 <div class="summary" ng-class="{'negative' : $ctrl.total_fee < 0 }">
     <span class="summary__total">{{$ctrl.fees.length}} items</span>
@@ -34,5 +36,5 @@
 </div>
 
 <div class="wallet">
-    <wallet-fee ng-repeat="fee in $ctrl.fees | search:$ctrl.keyword" fee="fee" class="wallet-fee" ng-class="{ 'last-fee': $last === true, 'first-fee': $first === true }"></wallet-fee>
+    <wallet-fee ng-repeat="fee in $ctrl.fees | search:$ctrl.data.keyword" fee="fee" class="wallet-fee" ng-class="{ 'last-fee': $last === true, 'first-fee': $first === true }" ng-transclude=""></wallet-fee>
 </div>

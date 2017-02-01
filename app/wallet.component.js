@@ -1,13 +1,16 @@
 (function (window) {
 
-    function feesController($timeout) {
+    function walletController($timeout) {
         var self = this;
 
-        self.fees = [];
-        self.total_fee = 0;
-        self.keyword = '';
-
         self.$onInit = function () {
+
+            self.fees = [];
+            self.total_fee = 0;
+            self.data = {
+                keyword: ''
+            };
+
             for (var i = 0; i < 10; i++) {
                 (function (ii) {
                     $timeout(function () {
@@ -32,7 +35,7 @@
         };
 
         self.onKeyup = function ($event) {
-            var text = self.keyword || '';
+            var text = self.data.keyword || '';
             if (text !== '' && $event.keyCode === 13) {
 
                 // var pattern = /^(.{1,1000})([+-]\d{1,12})$/g;
@@ -53,17 +56,25 @@
                 });
 
                 calcTotalFee();
-                self.keyword = '';
+                self.data.keyword = '';
             }
         };
 
-        self.onClearSearch_click = function() {
-            self.keyword = '';
+        self.onClearSearch = function() {
+            self.data.keyword = '';
         }
 
         self.$postLink = function () {
             // console.log('$postLink');
         }
+
+        self.$onChanges = function(changedObject) {
+            // console.log('wallet.$onChanges',changedObject);
+        };
+
+        self.$doCheck = function() {
+            // console.log('checking');
+        };
 
         function calcTotalFee() {
             self.total_fee = self.fees.map(function(e, i){
@@ -77,6 +88,7 @@
     angular.module('app')
         .component('wallet', {
             templateUrl: 'app/wallet.template.html',
-            controller: ['$timeout', feesController],
+            controller: ['$timeout', walletController],
+            transclude: true,
         });
 })(window);
