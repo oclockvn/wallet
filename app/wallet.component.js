@@ -39,7 +39,7 @@
             var text = self.data.keyword || '';
             if (text !== '' && $event.keyCode === 13) {
 
-                // var pattern = /^(.{1,1000})([+-]\d{1,12})$/g;
+                // /^(.{1,1000})([+-]\d{1,12})$/g;
 
                 if (/^(.{1,1000})([+-]\d{1,12})$/g.test(text) === false) {
                     return;
@@ -48,6 +48,10 @@
                 var p_matches = /^(.{1,1000})([+-]\d{1,12})$/g.exec(text);
                 var note = p_matches[1].trim();
                 var money = Number(p_matches[2]);
+
+                if (note[0] === window.app.start_search) {
+                    note = note.substr(1, note.length);
+                }
                 
                 self.fees.unshift({
                     checked: false,

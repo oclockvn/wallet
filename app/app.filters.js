@@ -12,11 +12,11 @@
         .filter('search', function () {
             return function (source, keyword) {
 
-                if (keyword == null || keyword === '') {
+                if (keyword == null || keyword === '' || keyword[0] !== window.app.start_search) {
                     return source;
                 }
 
-                keyword = keyword.toLowerCase();
+                keyword = keyword.toLowerCase().substr(1, keyword.length);
 
                 if (keyword[0] === '-' || keyword[0] === '+') {
                     return source
@@ -40,6 +40,13 @@
                 return source
                     .filter(function (fee) {
                         return fee.note.toLowerCase().indexOf(keyword) > -1;
+                        /*var note = fee.note.toLowerCase();
+                        var keys = keyword.split(' ');
+                        var exist = keys.some(function(k) {
+                            return note.indexOf(k) > -1;
+                        });
+
+                        return exist;*/
                     })
                     .filter(clean);
             }

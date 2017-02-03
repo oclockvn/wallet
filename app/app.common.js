@@ -9,6 +9,7 @@
             return num !== null && angular.isNumber(num) && isFinite(num);
         },
         pattern: /^(.{1,1000})([+-]\d{1,12})$/g,
+        start_search: '?'
     };
 
     if (window.Element && !Element.prototype.closest) {
