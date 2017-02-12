@@ -11,10 +11,11 @@
             bindings: {
                 fee: '<',
                 checkChange: '&',
+                onLostFocus: '&'
             },
             transclude: true,
             require: {
-                parent: '^wallet'
+                parent: '^^wallet'
             }
         });
 })(window);

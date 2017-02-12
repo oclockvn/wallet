@@ -1,3 +1,4 @@
 (function() {
-    angular.module('app', []);
+    var app = angular.module('app', ['firebase']);
+    app.constant('FIREBASE_URI', 'https://wallet-bee53.firebaseio.com/');
 })();

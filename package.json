@@ -1,0 +1,21 @@
+{
+  "name": "wallet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server . -p 2000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oclockvn/wallet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oclockvn/wallet/issues"
+  },
+  "homepage": "https://github.com/oclockvn/wallet#readme"
+}

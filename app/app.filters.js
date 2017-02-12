@@ -51,4 +51,19 @@
                     .filter(clean);
             }
         })
+        .factory('FilteredArray', function ($firebaseArray) {
+            function FilteredArray(ref, filterFn) {
+                this.filterFn = filterFn;
+                return $firebaseArray.call(this, ref);
+            }
+            FilteredArray.prototype.$$added = function (snap) {
+                var rec = $firebaseArray.prototype.$$added.call(this, snap);
+                console.log('snap = %o, rec = %o', snap, rec);
+                if (!this.filterFn || this.filterFn(rec)) {
+                    return rec;
+                }
+            };
+            return $firebaseArray.$extend(FilteredArray);
+        });
+
 })(window);

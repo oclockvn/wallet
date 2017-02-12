@@ -27,7 +27,7 @@
             templateUrl: 'app/wallet-header.template.html',
             controller: ['$scope','$rootScope',headController],
             require: {
-                parent: '^wallet'
+                parent: '^^wallet'
             },
             bindings: {
                 data: '<',

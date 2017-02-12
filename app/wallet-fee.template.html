@@ -1,11 +1,11 @@
 <div class="fee" ng-class="{'out':$ctrl.fee.money < 0, 'fee--checked': $ctrl.fee.checked}">
     <div class="fee__check">
         <label class="no-select">
-            <input type="checkbox" ng-model="$ctrl.fee.checked" ng-change="$ctrl.checkChange()"> <span class="fee__time">{{$ctrl.fee.time | date:'dd/mm/yyyy hh:mm a'}}</span>
+            <input type="checkbox" ng-model="$ctrl.fee.checked" ng-change="$ctrl.checkChange()"> <span class="fee__time">{{$ctrl.fee.time | date:'dd/MM/yyyy hh:mm a'}}</span>
         </label>
     </div>
     <div class="fee__note">
-        <input type="text" class="note" placeholder="note something" ng-model="$ctrl.fee.note">
+        <input type="text" class="note" placeholder="note something" ng-model="$ctrl.fee.note" ng-blur="$ctrl.onLostFocus()">
     </div>
     <div class="fee__money">{{$ctrl.fee.money | currency:'':0}}</div>
 </div>
