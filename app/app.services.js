@@ -4,30 +4,6 @@
 
         var ref = new Firebase(FIREBASE_URI);
         var fees = $firebaseArray(ref);
-
-        // var getBuildings = function () {
-        //     return buildings;
-        // };
-
-        // var addBuilding = function (item) {
-        //     buildings.$add(item);
-        // };
-
-        // var updateBuilding = function (id) {
-        //     buildings.$save(id);
-        // };
-
-        // var removeBuilding = function (id) {
-        //     buildings.$remove(id);
-        // };
-
-        // return {
-        //   getBuildings: getBuildings,
-        //   addBuilding: addBuilding,
-        //   updateBuilding: updateBuilding,
-        //   removeBuilding: removeBuilding
-        // };
-
         var self = {};
 
         self.fees = fees;

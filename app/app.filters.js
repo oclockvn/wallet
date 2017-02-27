@@ -39,14 +39,7 @@
 
                 return source
                     .filter(function (fee) {
-                        return fee.note.toLowerCase().indexOf(keyword) > -1;
-                        /*var note = fee.note.toLowerCase();
-                        var keys = keyword.split(' ');
-                        var exist = keys.some(function(k) {
-                            return note.indexOf(k) > -1;
-                        });
-
-                        return exist;*/
+                        return fee.note.toLowerCase().indexOf(keyword) > -1;                        
                     })
                     .filter(clean);
             }
