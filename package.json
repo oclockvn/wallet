@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/oclockvn/wallet/issues"
   },
-  "homepage": "https://github.com/oclockvn/wallet#readme"
+  "homepage": "https://github.com/oclockvn/wallet#readme",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angularfire": "^2.3.0",
+    "firebase": "^3.6.8"
+  }
 }

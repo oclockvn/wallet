@@ -1,0 +1,17 @@
+<div class="wallet-container">
+    <wallet-header data="$ctrl.data" on-clear-search="$ctrl.onClearSearch()" uncheck-all="$ctrl.uncheckAll()" delete-selected="$ctrl.deleteSelected()"></wallet-header>
+    <div class="summary" ng-class="{'negative' : $ctrl.total_fee < 0 }">
+        <span class="summary__period">{{ $ctrl.currentPeriod | date:'dd/MM/yyyy'}}</span>
+        <span class="summary__total">{{$ctrl.fees.length}} items</span>
+        <div class="summary__report">
+            <span>{{$ctrl.total_fee | currency:'': 0}}</span>
+        </div>
+    </div>
+    <div class="wallet">
+        <div class="progress" ng-show="$ctrl.loading">
+            <div class="indeterminate"></div>
+        </div>
+        <wallet-fee ng-repeat="fee in $ctrl.fees | search:$ctrl.data.keyword" fee="fee" class="wallet-fee" ng-class="{ 'last-fee': $last === true, 'first-fee': $first === true }"
+            check-change="$ctrl.checkChange(fee)" on-lost-focus="$ctrl.update(fee)" ng-transclude=""></wallet-fee>
+    </div>
+</div>
